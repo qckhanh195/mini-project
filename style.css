@@ -1,6 +1,6 @@
 .carousel{
     margin: 100px auto;
-    width: 90%;
+    width: 80%;
     border: 5px solid red;
     display: flex;
     overflow-x: auto;
@@ -22,7 +22,7 @@
 
 .card{
     flex: 0 0 5em;
-    height: 5em;
+    height: 3em;
     padding: 1em;
     background: cornflowerblue;
     font-size: 3rem;
