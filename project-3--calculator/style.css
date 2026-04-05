@@ -25,12 +25,25 @@ body {
     rgba(240, 46, 46, 0.05) -25px 25px;
 }
 
-.display {
-  height: 80px;
-  display: block;
+.screen{
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.display-extra{
+  visibility: hidden;
   text-align: right;
-  padding: 30px 30px;
-  font-size: 32px;
+  padding: 0 30px;
+  font-size: 20px;
+  color: #777;
+}
+
+.screen .display{
+  text-align: right;
+  padding: 0 30px 10px;
+  font-size: 48px;
 }
 
 .buttons {
