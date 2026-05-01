@@ -3,46 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Mini Projects Portfolio</title>
-    <style>
-        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f4f4f9; }
-        h1 { color: #333; margin-top: 50px; }
-        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 80%; margin-top: 30px; }
-        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); }
-        .card a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 1.1rem; }
-    </style>
+    <title>Quốc Khánh | Portfolio</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-theme">
 
-    <h1>Kho Mini Projects của tôi</h1>
-    
-    <div class="container">
-        <!-- Project 1 -->
-        <div class="card">
-            <a href="./project-1--quick_game/">🎮 Quick Game</a>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fa-solid fa-terminal logo-icon"></i>
+                <span class="logo-text">Quốc Khánh</span>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/yourprofile" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://facebook.com/yourprofile" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
         </div>
+    </nav>
 
-        <!-- Project 2 -->
-        <div class="card">
-            <a href="./project-2--infinite_carousel_animations/">🎠 Infinite Carousel</a>
-        </div>
+    <header class="hero">
+        <h1 class="display-hero">Kho Mini Projects của tôi</h1>
+        <p class="body-large">:DDDDD</p>
+    </header>
 
-        <!-- Project 3 -->
-        <div class="card">
-            <a href="./project-3--calculator/">🧮 Calculator</a>
-        </div>
+    <main class="container">
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <article class="card">
+                <div class="card-content">
+                    <i class="fa-solid fa-gamepad card-icon-fa"></i>
+                    <h3 class="card-title">Quick Game</h3>
+                    <p class="card-description">Thử thách phản xạ với trò chơi tốc độ cao.</p>
+                    <a href="./project-1--quick_game/" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-        <!-- Project 4 -->
-        <div class="card">
-            <a href="./project-4--weather_app/">🌤️ Weather App</a>
-        </div>
+            <!-- Project 2 -->
+            <article class="card">
+                <div class="card-content">
+                    <i class="fa-solid fa-images card-icon-fa"></i>
+                    <h3 class="card-title">Infinite Carousel</h3>
+                    <p class="card-description">Hiệu ứng trượt ảnh vô tận mượt mà với CSS & JS.</p>
+                    <a href="./project-2--infinite_carousel_animations/" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
 
-        <!-- Project 5 -->
-        <div class="card">
-            <a href="./project-5--todo_list/">✅ To-Do List</a>
+            <!-- Project 3 -->
+            <article class="card">
+                <div class="card-content">
+                    <i class="fa-solid fa-calculator card-icon-fa"></i>
+                    <h3 class="card-title">Calculator</h3>
+                    <p class="card-description">Công cụ tính toán cơ bản với giao diện tối giản.</p>
+                    <a href="./project-3--calculator/" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="card">
+                <div class="card-content">
+                    <i class="fa-solid fa-cloud-sun card-icon-fa"></i>
+                    <h3 class="card-title">Weather App</h3>
+                    <p class="card-description">Dự báo thời tiết thời gian thực qua OpenWeather API.</p>
+                    <a href="./project-4--weather_app/" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="card">
+                <div class="card-content">
+                    <i class="fa-solid fa-list-check card-icon-fa"></i>
+                    <h3 class="card-title">To-Do List</h3>
+                    <p class="card-description">Quản lý công việc hàng ngày hiệu quả hơn.</p>
+                    <a href="./project-5--todo_list/" class="card-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
         </div>
-    </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Quốc Khánh.</p>
+    </footer>
 
 </body>
 </html>
