@@ -24,7 +24,7 @@ const Home = () => {
               io
             </h1>
             <p className="notion-quote">
-              <code>Trang tổng hợp các mini-project mình đã thực hiện !! 
+              <code>Trang tổng hợp một số mini project mình đã thực hiện !! 
               <br />
               Đã điều chỉnh phù hợp :DDDD
               </code>
