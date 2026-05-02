@@ -13,7 +13,7 @@ const QuickGame = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/QuickGame/questions.json')
+    fetch('QuickGame/questions.json')
       .then((response) => response.json())
       .then((data) => {
         setQuestions(data);
