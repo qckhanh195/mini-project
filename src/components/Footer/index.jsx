@@ -4,7 +4,9 @@ const Footer =()=>{
   return(
     <>
       <footer className="footer">
-        <p>© 2026 Quốc Khánh.</p>
+        <div className="container">
+          <p>© 2026 Quốc Khánh.</p>
+        </div>
       </footer>
     </>
   )
