@@ -15,8 +15,20 @@ const Home = () => {
                 alt="GitHub Badge"
               />
             </a>
-            <h1 className="display-hero">Mini Projects của tôi</h1>
-            <p className="body-large">:DDDDDDDDDDDDD</p>
+            <span class="label-badge">FRONT END</span>
+            <h1 className="display-hero">
+              qckhanh195
+              <span className="dot">.</span>
+              github
+              <span className="dot">.</span>
+              io
+            </h1>
+            <p className="notion-quote">
+              <code>Trang tổng hợp các mini-project mình đã thực hiện !! 
+              <br />
+              Đã điều chỉnh phù hợp :DDDD
+              </code>
+            </p>
           </div>
           <div className="hero-right">
             <div className="code-window">

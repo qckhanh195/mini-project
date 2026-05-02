@@ -8,7 +8,7 @@ const Navbar = () => {
           <a href="/" className="logo-wrapper">
             <div className="logo">
               <i className="fa-solid fa-terminal logo-icon"></i>
-              <span className="logo-text">Quốc Khánh</span>
+              <b>Qika__195</b>
             </div>
           </a>
           <div className="social-links">
