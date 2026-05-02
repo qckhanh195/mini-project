@@ -1,62 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./QuickGame.css";
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-const quizQuestions = [
-  {
-    question: "What is the capital of France?",
-    answers: [
-      { text: "London", correct: false },
-      { text: "Berlin", correct: false },
-      { text: "Paris", correct: true },
-      { text: "Madrid", correct: false },
-    ],
-  },
-  {
-    question: "Which planet is known as the Red Planet?",
-    answers: [
-      { text: "Venus", correct: false },
-      { text: "Mars", correct: true },
-      { text: "Jupiter", correct: false },
-      { text: "Saturn", correct: false },
-    ],
-  },
-  {
-    question: "What is the largest ocean on Earth?",
-    answers: [
-      { text: "Atlantic Ocean", correct: false },
-      { text: "Indian Ocean", correct: false },
-      { text: "Arctic Ocean", correct: false },
-      { text: "Pacific Ocean", correct: true },
-    ],
-  },
-  {
-    question: "Which of these is NOT a programming language?",
-    answers: [
-      { text: "Java", correct: false },
-      { text: "Python", correct: false },
-      { text: "Banana", correct: true },
-      { text: "JavaScript", correct: false },
-    ],
-  },
-  {
-    question: "What is the chemical symbol for gold?",
-    answers: [
-      { text: "Go", correct: false },
-      { text: "Gd", correct: false },
-      { text: "Au", correct: true },
-      { text: "Ag", correct: false },
-    ],
-  },
-];
-
 const QuickGame = () => {
+  const [questions, setQuestions] = useState([]);
   const [gameState, setGameState] = useState('start');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [answersDisabled, setAnswersDisabled] = useState(false);
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null); // Sử dụng ở đây
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/QuickGame/questions.json')
+      .then((response) => response.json())
+      .then((data) => {
+        setQuestions(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Lỗi khi tải câu hỏi:", error);
+        setLoading(false);
+      });
+  }, []);
 
   const startQuiz = () => {
     setScore(0);
@@ -70,46 +37,37 @@ const QuickGame = () => {
     if (answersDisabled) return;
 
     setAnswersDisabled(true);
-    setSelectedAnswerIndex(index); // Cập nhật vị trí nút vừa bấm
+    setSelectedAnswerIndex(index);
 
-    if (isCorrect) {
-      setScore((prev) => prev + 1);
-    }
+    if (isCorrect) setScore((prev) => prev + 1);
 
     setTimeout(() => {
       const nextIndex = currentQuestionIndex + 1;
-      if (nextIndex < quizQuestions.length) {
+      if (nextIndex < questions.length) {
         setCurrentQuestionIndex(nextIndex);
         setAnswersDisabled(false);
-        setSelectedAnswerIndex(null); // Reset sau khi qua câu mới
+        setSelectedAnswerIndex(null);
       } else {
         setGameState('result');
       }
     }, 1000);
   };
 
-  const getResultMessage = () => {
-    const percentage = (score / quizQuestions.length) * 100;
-    if (percentage === 100) return "Perfect! You're a genius!";
-    if (percentage >= 80) return "Great job! You know your stuff!";
-    if (percentage >= 60) return "Good effort! Keep learning!";
-    if (percentage >= 40) return "Not bad! Try again to improve!";
-    return "Keep studying! You'll get better!";
-  };
+  if (loading) return <div className="quick-game">Đang tải câu hỏi...</div>;
+  if (questions.length === 0) return <div className="quick-game">Không tìm thấy câu hỏi.</div>;
 
-  const currentQuestion = quizQuestions[currentQuestionIndex];
-  const progressPercent = ((currentQuestionIndex) / quizQuestions.length) * 100;
+  const currentQuestion = questions[currentQuestionIndex];
+  const progressPercent = (currentQuestionIndex / questions.length) * 100;
 
   return (
     <>
       <Navbar />
       <main className="quick-game">
         <div className="container-game">
-          
           {gameState === 'start' && (
             <div className="screen active">
-              <h1>Quiz Time</h1>
-              <p>Test your knowledge with these fun questions</p>
+              <h1>Quiz Game</h1>
+              <p>Kiểm tra kiến thức của bạn bằng các câu hỏi !</p>
               <button onClick={startQuiz}>Start Quiz</button>
             </div>
           )}
@@ -119,7 +77,7 @@ const QuickGame = () => {
               <div className="quiz-header">
                 <h2>{currentQuestion.question}</h2>
                 <p>
-                  Question <span>{currentQuestionIndex + 1}</span> of <span>{quizQuestions.length}</span>
+                  Question <span>{currentQuestionIndex + 1}</span> of <span>{questions.length}</span>
                 </p>
                 <p>Score: <span>{score}</span></p>
               </div>
@@ -127,18 +85,11 @@ const QuickGame = () => {
               <div className="answers-container">
                 {currentQuestion.answers.map((answer, index) => {
                   let buttonClass = "answer-btn";
-                  
                   if (answersDisabled) {
-                    if (answer.correct) {
-                      buttonClass += " correct";
-                    } else if (index === selectedAnswerIndex) {
-                      buttonClass += " incorrect";
-                    }
+                    if (answer.correct) buttonClass += " correct";
+                    else if (index === selectedAnswerIndex) buttonClass += " incorrect";
                   }
-
-                  if (index === selectedAnswerIndex) {
-                    buttonClass += " selected";
-                  }
+                  if (index === selectedAnswerIndex) buttonClass += " selected";
 
                   return (
                     <button
@@ -154,10 +105,7 @@ const QuickGame = () => {
               </div>
 
               <div className="progress-bar">
-                <div 
-                  className="progress" 
-                  style={{ width: `${progressPercent}%` }}
-                ></div>
+                <div className="progress" style={{ width: `${progressPercent}%` }}></div>
               </div>
             </div>
           )}
@@ -166,15 +114,14 @@ const QuickGame = () => {
             <div className="screen active">
               <h1>Quiz Results</h1>
               <div className="result-info">
-                <p>
-                  Your scored <span>{score}</span> out of <span>{quizQuestions.length}</span>
-                </p>
-                <div id="result-message">{getResultMessage()}</div>
+                <p>Your scored <span>{score}</span> out of <span>{questions.length}</span></p>
+                <div id="result-message">
+                    {(score / questions.length) * 100 >= 80 ? "Great job!" : "Keep trying!"}
+                </div>
               </div>
               <button onClick={startQuiz}>Restart Quiz</button>
             </div>
           )}
-
         </div>
       </main>
       <Footer />
