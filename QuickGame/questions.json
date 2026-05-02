@@ -1,0 +1,92 @@
+[
+  {
+    "question": "Thủ đô của Việt Nam là gì?",
+    "answers": [
+      { "text": "TP. Hồ Chí Minh", "correct": false },
+      { "text": "Đà Nẵng", "correct": false },
+      { "text": "Hà Nội", "correct": true },
+      { "text": "Huế", "correct": false }
+    ]
+  },
+  {
+    "question": "Hành tinh nào được mệnh danh là hành tinh đỏ?",
+    "answers": [
+      { "text": "Sao Kim", "correct": false },
+      { "text": "Sao Hỏa", "correct": true },
+      { "text": "Sao Mộc", "correct": false },
+      { "text": "Sao Thổ", "correct": false }
+    ]
+  },
+  {
+    "question": "Đại dương nào lớn nhất thế giới?",
+    "answers": [
+      { "text": "Đại Tây Dương", "correct": false },
+      { "text": "Ấn Độ Dương", "correct": false },
+      { "text": "Bắc Băng Dương", "correct": false },
+      { "text": "Thái Bình Dương", "correct": true }
+    ]
+  },
+  {
+    "question": "Số nào sau đây là số nguyên tố?",
+    "answers": [
+      { "text": "4", "correct": false },
+      { "text": "9", "correct": false },
+      { "text": "13", "correct": true },
+      { "text": "15", "correct": false }
+    ]
+  },
+  {
+    "question": "Ai là người phát minh ra bóng đèn sợi đốt?",
+    "answers": [
+      { "text": "Nikola Tesla", "correct": false },
+      { "text": "Thomas Edison", "correct": true },
+      { "text": "Alexander Graham Bell", "correct": false },
+      { "text": "Albert Einstein", "correct": false }
+    ]
+  },
+  {
+    "question": "Ngôn ngữ nào không phải là ngôn ngữ lập trình?",
+    "answers": [
+      { "text": "Python", "correct": false },
+      { "text": "Java", "correct": false },
+      { "text": "HTML", "correct": true },
+      { "text": "C++", "correct": false }
+    ]
+  },
+  {
+    "question": "Kim loại nào ở trạng thái lỏng ở nhiệt độ phòng?",
+    "answers": [
+      { "text": "Sắt", "correct": false },
+      { "text": "Vàng", "correct": false },
+      { "text": "Thủy ngân", "correct": true },
+      { "text": "Đồng", "correct": false }
+    ]
+  },
+  {
+    "question": "Bức tranh 'Mona Lisa' do ai vẽ?",
+    "answers": [
+      { "text": "Vincent van Gogh", "correct": false },
+      { "text": "Leonardo da Vinci", "correct": true },
+      { "text": "Pablo Picasso", "correct": false },
+      { "text": "Claude Monet", "correct": false }
+    ]
+  },
+  {
+    "question": "Ký hiệu hóa học của Vàng là gì?",
+    "answers": [
+      { "text": "Ag", "correct": false },
+      { "text": "Fe", "correct": false },
+      { "text": "Au", "correct": true },
+      { "text": "Gd", "correct": false }
+    ]
+  },
+  {
+    "question": "Quốc gia nào có diện tích lớn nhất thế giới?",
+    "answers": [
+      { "text": "Canada", "correct": false },
+      { "text": "Mỹ", "correct": false },
+      { "text": "Trung Quốc", "correct": false },
+      { "text": "Nga", "correct": true }
+    ]
+  }
+]
