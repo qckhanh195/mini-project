@@ -1,34 +1,34 @@
-## 1. Clone và Cài đặt
-### Tải mã nguồn từ GitHub về máy
+## 1. Clone and Install
+### Download the source code from GitHub
 ```
 git clone https://github.com/qckhanh195/mini-project.git
 ```
 
-### Cài đặt tất cả các thư viện cần thiết (node_modules)
+### Install all necessary libraries (node_modules)
 ```
 npm install
 ```
 
-## 2. Chạy dự án (Development)
-### Khởi động server để lập trình và xem thay đổi tức thì
+## 2. Run the Project (Development)
+### Start the server to program and see the changes immediately
 ```
 npm run dev
 ```
-### Mở trình duyệt tại: ```http://localhost:5173```
+### Open your browser at: ```http://localhost:5173```
 
-## 3. Kiểm tra bản Build (Production Preview)
-### Đóng gói dự án vào thư mục dist
+## 3. Check the Build (Production Preview)
+### Package the project into the dist directory
 ```
 npm run build
 ```
 
-### Chạy thử bản build để kiểm tra lỗi đường dẫn/file (giống trên GitHub)
+### Run the build to check for path/file errors (similar to GitHub)
 ```
 npx vite preview
 ```
 
-## 4. Triển khai (Deploy)
-### Đẩy bản build lên nhánh gh-pages để cập nhật trang web công khai
+## 4. Deploy
+### Push the build to the gh-pages branch to update the public website
 ```
 npm run deploy
 ```
