@@ -82,7 +82,7 @@ const Home = () => {
                 <p className="card-description">
                   Công cụ tính toán cơ bản với giao diện tối giản.
                 </p>
-                <Link to="/calculatorr" className="card-link">
+                <Link to="/calculator" className="card-link">
                   Explore <i className="fa-solid fa-arrow-right"></i>
                 </Link>
               </div>
