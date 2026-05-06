@@ -110,7 +110,6 @@
   color: #e06c75;
 }
 
-/* Pause animation on hover */
 .carousel-wrapper:hover .carousel-track {
   animation-play-state: paused;
 }
@@ -212,7 +211,7 @@
 
 .carousel-track {
   display: flex;
-  width: calc(250px * 10); /* Chiều rộng item * tổng số item (cả duplicate) */
+  width: calc(250px * 10);
   animation: scroll 20s linear infinite;
 }
 
@@ -239,9 +238,5 @@
   }
   100% {
     transform: translateX(calc(-250px * 5));
-  } /* Chạy hết 5 item đầu */
+  } 
 }
-
-/* --- Footer --- */
-
-
